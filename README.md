@@ -2,9 +2,9 @@
 
 # Alex Zhang
 
-**I build agent harnesses — the runtime layer between a model and a codebase.**
+**I build agent infrastructure — and try to keep it readable.**
 
-<sub>TypeScript · Bun · React · MCP · ACP · OS-level sandboxing</sub>
+<sub>TypeScript · Bun · a bias for small kernels and explicit boundaries</sub>
 
 [Documentation](https://alexzhangupupup.github.io/micro-harness/) · [Latest release](https://github.com/AlexZhangUPUPUP/micro-harness/releases) · [GitHub](https://github.com/AlexZhangUPUPUP)
 
@@ -12,35 +12,42 @@
 
 ---
 
-## Now
+I work on coding agents and the runtime around them. Most of what I know about
+agents comes from building one: the loop, the tools, the boundaries, the numbers.
+I prefer systems where every decision can be read in the repository and checked
+with a test — and I would rather ship a small kernel than a large abstraction.
 
-**[micro-harness](https://github.com/AlexZhangUPUPUP/micro-harness)** `v0.2.1` — a general-purpose agent harness built from scratch.
+## Currently
 
-- **Own loop.** Model calls, tool dispatch, context compaction, and one event stream that is simultaneously the session log, the SSE feed, the replay source and the inspector.
-- **Explicit boundaries.** Four permission presets, per-call approvals, and OS-level sandboxing (Seatbelt / bubblewrap) that fails closed and hides credential stores by default.
-- **Both directions of protocol.** MCP client for external tools, MCP server for other agents, ACP server for editors — one kernel behind the CLI, the web UI and the editor.
-- **Measured, not claimed.** ~13.4k lines of TypeScript, 238 tests, a 26-task eval suite, and CI on macOS and Linux.
+Building **[micro-harness](https://github.com/AlexZhangUPUPUP/micro-harness)** `v0.2.1` —
+a general-purpose agent harness with its own loop, OS-level sandboxing and
+MCP/ACP. The part I care about most is not the feature list; it is that the
+kernel stays small enough to audit.
 
 ## Selected work
 
-| Project | What it is |
+| | |
 | --- | --- |
 | **[micro-harness](https://github.com/AlexZhangUPUPUP/micro-harness)** | Agent harness: loop, tools, multi-agent, sandbox, evals. `v0.2.1` · [Docs](https://alexzhangupupup.github.io/micro-harness/) |
-| **[PiStudio](https://github.com/AlexZhangUPUPUP/PiStudio)** | Desktop GUI for [pi](https://github.com/earendil-works/pi) — parallel sessions, image paste, streaming transcript. Electron + React. |
+| **[PiStudio](https://github.com/AlexZhangUPUPUP/PiStudio)** | Desktop GUI for [pi](https://github.com/earendil-works/pi) — parallel sessions, image paste, streaming transcript. |
 
-## Toolbox
+## What I care about
 
-`TypeScript` `Bun` `React` `SQLite` `MCP` `ACP` `Seatbelt` `bubblewrap`
+- **Readable kernels** over clever abstractions.
+- **Explicit boundaries** — permissions and sandboxes, not promises.
+- **Honest numbers** — if a cost is unknown, say so.
 
-## Principles
+## Elsewhere
 
-> Readable kernels · explicit boundaries · honest numbers.
+[Documentation](https://alexzhangupupup.github.io/micro-harness/) ·
+[Latest release](https://github.com/AlexZhangUPUPUP/micro-harness/releases)
 
 <details>
 <summary>中文</summary>
 
-做 **Agent Harness**——模型与代码库之间的运行时层。
+做编码 Agent 和它周边的运行时。对 agent 的理解 mostly 来自亲手搭一个：循环、工具、边界、数字。
+我偏好在仓库里能读到每一个决定、能用测试验证的系统——与其堆一个大抽象，不如留一个小内核。
 
-目前在维护 [micro-harness](https://github.com/AlexZhangUPUPUP/micro-harness)：从零实现的通用 Agent Harness，自有循环、OS 级沙箱（Seatbelt / bubblewrap）、MCP + ACP，CLI 与 Web 共享同一内核；约 1.34 万行 TypeScript、238 个测试。
+目前在维护 [micro-harness](https://github.com/AlexZhangUPUPUP/micro-harness)：通用 Agent Harness，自有循环、OS 级沙箱、MCP + ACP；最在意的不是功能列表，而是内核小到可以审计。
 
 </details>
